@@ -57,13 +57,9 @@ The existing folder structure is kept. No `public` folder is required.
 Real-Time-Communication/
 │
 ├── node_modules/
-├── WebSocket/
-│   ├── client1.html
-│   └── webSocket.js
-│
-├── longPolling.js
-├── package.json
-└── package-lock.json
+└── WebSocket/
+    ├── client1.html
+    └── webSocket.js
 ```
 
 For the commands and relative paths shown in this practice, open the terminal inside the `WebSocket` folder and run:
@@ -121,7 +117,7 @@ This creates the Socket.IO server and attaches it to our HTTP server. Both Expre
 ### Step 5: Serve the HTML file
 
 ```js
-app.use(express.static(path.resolve(".")));
+app.use(express.static(path.resolve("./WebSocket")));
 
 app.get("/", (req, res) => {
     return res.sendFile(path.resolve("client1.html"));
